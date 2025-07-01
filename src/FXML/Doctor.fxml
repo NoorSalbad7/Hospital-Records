@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="563.0" prefWidth="657.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<children>
+      <TabPane fx:id="TabPane1" prefHeight="563.0" prefWidth="690.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Manage Patient">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane layoutX="-3.0" layoutY="-3.0" prefHeight="554.0" prefWidth="657.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab fx:id="AddProductTab" text="Add Patient">
+                              <content>
+                                <AnchorPane fx:id="idd" minHeight="0.0" minWidth="0.0" prefHeight="344.0" prefWidth="615.0" style="-fx-background-color: #e0e0d1;">
+                                       <children>
+                                          <TextField fx:id="TextFieldName" layoutX="311.0" layoutY="66.0" prefHeight="30.0" prefWidth="226.0" promptText="Name" />
+                                          <ComboBox fx:id="ComBoxDoctor" layoutX="309.0" layoutY="171.0" prefHeight="33.0" prefWidth="229.0" promptText="Doctor_id" />
+                                          <TextField fx:id="TextFieldAge" layoutX="309.0" layoutY="237.0" prefHeight="32.0" prefWidth="229.0" promptText="Age" />
+                                          <TextArea fx:id="TextAreaProblem" layoutX="309.0" layoutY="305.0" prefHeight="94.0" prefWidth="231.0" promptText="Problem" />
+                                          <Button fx:id="ButtonAdd" layoutX="329.0" layoutY="413.0" mnemonicParsing="false" onAction="#Add" prefHeight="30.0" prefWidth="76.0" style="-fx-background-radius: 20;" styleClass="Add_product" text="Add" textFill="#e4187a">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Text fill="#e4187a" layoutX="305.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Patient" textAlignment="RIGHT" wrappingWidth="118.55078125">
+                                             <font>
+                                                <Font name="System Bold Italic" size="18.0" />
+                                             </font>
+                                          </Text>
+                                          <VBox fx:id="pane" alignment="CENTER" layoutX="-4.0" layoutY="-2.0" prefHeight="525.0" prefWidth="287.0" style="-fx-background-color: #e4187a;" />
+                                          <RadioButton fx:id="male" layoutX="438.0" layoutY="124.0" mnemonicParsing="false" stylesheets="@../css/From.css" text="Male" />
+                                          <RadioButton fx:id="famel" layoutX="329.0" layoutY="124.0" mnemonicParsing="false" text="Famel" />
+                                          <Button fx:id="ButtonAdd" layoutX="558.0" layoutY="38.0" mnemonicParsing="false" onAction="#addPicBut" prefHeight="30.0" prefWidth="76.0" style="-fx-background-radius: 20;" styleClass="Add_product" text="Add" textFill="#e4187a">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Button>
+                                       </children></AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab fx:id="AddSpPatientInf" text="Add a Specific Patient information">
+                                 <content>
+                                    <AnchorPane fx:id="idd1" minHeight="0.0" minWidth="0.0" prefHeight="344.0" prefWidth="615.0" style="-fx-background-color: #e0e0d1;">
+                                       <children>
+                                          <ComboBox fx:id="ComBoxDoctor1" layoutX="313.0" layoutY="166.0" prefHeight="33.0" prefWidth="225.0" promptText="Doctor_id" />
+                                          <Button fx:id="ButtonAdd1" layoutX="305.0" layoutY="248.0" mnemonicParsing="false" onAction="#Make" prefHeight="30.0" prefWidth="76.0" style="-fx-background-radius: 20;" styleClass="Add_product" text="Add" textFill="#e4187a">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Text fill="#e4187a" layoutX="305.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Specific" textAlignment="RIGHT" wrappingWidth="118.55078125">
+                                             <font>
+                                                <Font name="System Bold Italic" size="18.0" />
+                                             </font>
+                                          </Text>
+                                          <VBox alignment="CENTER" layoutX="-4.0" layoutY="-2.0" prefHeight="525.0" prefWidth="287.0" style="-fx-background-color: e4187a;" />
+                                          <ComboBox fx:id="ComBoxMedicine" layoutX="313.0" layoutY="106.0" prefHeight="33.0" prefWidth="225.0" promptText="Medicine_id" />
+                                          <ComboBox fx:id="ComBoxPatient" layoutX="311.0" layoutY="54.0" prefHeight="33.0" prefWidth="229.0" promptText="Patient_id" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="View Patient ">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="526.0" prefWidth="652.0" style="-fx-background-color: #f4489;">
+                                       <children>
+                                          <TableView fx:id="Patient_Table" editable="true" layoutX="12.0" layoutY="26.0" prefHeight="243.0" prefWidth="680.0">
+                                             <columns>
+                                                <TableColumn fx:id="Pro_Id_column" prefWidth="66.0" text="ID" />
+                                                <TableColumn fx:id="pro_name_column" prefWidth="90.0" text="Name" />
+                                                <TableColumn fx:id="pro_Age_column" prefWidth="88.0" text="Age" />
+                                                <TableColumn fx:id="pro_Date_Column" prefWidth="137.0" text="Entrancedate" />
+                                                <TableColumn fx:id="pro_Problem_Column" minWidth="0.0" prefWidth="120.0" text="Problem" />
+                                                <TableColumn fx:id="pro_Gender_Column" minWidth="0.0" prefWidth="178.0" text="Gender" />
+                                             </columns>
+                                          </TableView>
+                                          <Button fx:id="selectPro1" layoutX="432.0" layoutY="291.0" mnemonicParsing="false" onAction="#deletText" prefHeight="32.0" prefWidth="142.0" style="-fx-background-radius: 15;" text="Select then delete" textFill="#e4187a">
+                                             <font>
+                                                <Font name="System Bold Italic" size="13.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="editPro1" layoutX="235.0" layoutY="290.0" mnemonicParsing="false" onAction="#editProa" prefHeight="34.0" prefWidth="151.0" style="-fx-background-radius: 15;" text="Edit then click to save" textFill="#e4187a">
+                                             <font>
+                                                <Font name="System Bold Italic" size="13.0" />
+                                             </font>
+                                          </Button>
+                                          <Button layoutX="114.0" layoutY="291.0" mnemonicParsing="false" onAction="#show" prefHeight="32.0" prefWidth="70.0" style="-fx-background-radius: 15;" text="Show" textFill="#e4187a">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Button>
+                                          <Button layoutX="344.0" layoutY="371.0" mnemonicParsing="false" onAction="#buttonSearchhandel" prefHeight="33.0" prefWidth="62.0" text="search" textFill="#e4187a">
+                                             <effect>
+                                                <InnerShadow color="#e4187a" height="32.86" radius="18.895" width="44.72" />
+                                             </effect>
+                                             <font>
+                                                <Font name="System Bold Italic" size="13.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="txtFieldsearch" layoutX="104.0" layoutY="370.0" prefHeight="33.0" prefWidth="184.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                            <Tab text="View Prescription">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="526.0" prefWidth="652.0" style="-fx-background-color: #f4489;">
+                                       <children>
+                                          <TableView fx:id="Patienttable" editable="true" layoutX="74.0" layoutY="34.0" prefHeight="243.0" prefWidth="680.0">
+                                            <columns>
+                                              <TableColumn fx:id="Patient_ID" minWidth="6.0" prefWidth="181.0" text="Patient_ID" />
+                                              <TableColumn fx:id="Medicine_ID" prefWidth="217.0" text="Medicine_ID" />
+                                                <TableColumn fx:id="publishedDate" prefWidth="185.0" text="publishedDate" />
+                                            </columns>
+                                          </TableView>
+                                          <Button fx:id="button" layoutX="329.0" layoutY="331.0" mnemonicParsing="false" onAction="#buttonSear" prefHeight="33.0" prefWidth="62.0" text="Show" textFill="#e4187a">
+                                             <effect>
+                                                <InnerShadow color="#e4187a" height="32.86" radius="18.895" width="44.72" />
+                                             </effect>
+                                             <font>
+                                                <Font name="System Bold Italic" size="13.0" />
+                                             </font></Button>
+                                          <TextField fx:id="txtFieldse" layoutX="100.0" layoutY="331.0" prefHeight="33.0" prefWidth="184.0" />
+                                       </children></AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab text="View Profile">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #e0e0d1;">
+                                       <children>
+                                          <Button fx:id="EditProf" layoutX="182.0" layoutY="370.0" mnemonicParsing="false" onAction="#Prof" prefHeight="32.0" prefWidth="118.0" style="-fx-background-radius: 15;" text="View Profile" textFill="#e4187a">
+                                             <font>
+                                                <Font name="System Bold Italic" size="15.0" />
+                                             </font>
+                                          </Button>
+                                          <Label fx:id="name" layoutX="151.0" layoutY="129.0" prefHeight="21.0" prefWidth="68.0" text="Name :" textFill="#e4187a">
+                                             <font>
+                                                <Font name="System Bold Italic" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="id" layoutX="157.0" layoutY="96.0" text="ID :" textFill="#e4187a">
+                                             <font>
+                                                <Font name="System Bold Italic" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="age" layoutX="156.0" layoutY="180.0" text="Age" textFill="#e4187a">
+                                             <font>
+                                                <Font name="System Bold Italic" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="gender" layoutX="144.0" layoutY="230.0" text="Gender" textFill="#e4187a">
+                                             <font>
+                                                <Font name="System Bold Italic" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="date" layoutX="120.0" layoutY="278.0" prefHeight="21.0" prefWidth="101.0" text="EntranceDate" textFill="#e4187a">
+                                             <font>
+                                                <Font name="System Bold Italic" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Text fill="#e4187a" layoutX="277.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile" wrappingWidth="125.091796875">
+                                             <font>
+                                                <Font name="System Bold Italic" size="18.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="id2" layoutX="257.0" layoutY="95.0" prefHeight="30.0" prefWidth="203.0" promptText="ID" />
+                                          <TextField fx:id="date2" layoutX="257.0" layoutY="273.0" prefHeight="30.0" prefWidth="203.0" promptText="Date" />
+                                          <TextField fx:id="gender2" layoutX="257.0" layoutY="225.0" prefHeight="30.0" prefWidth="203.0" promptText="Gender" />
+                                          <TextField fx:id="name2" layoutX="257.0" layoutY="134.0" prefHeight="30.0" prefWidth="203.0" promptText="Name" />
+                                          <TextField fx:id="age2" layoutX="257.0" layoutY="176.0" prefHeight="30.0" prefWidth="203.0" promptText="Age" />
+                                          <TextField fx:id="txtField" layoutX="329.0" layoutY="371.0" prefHeight="30.0" prefWidth="203.0" promptText="ID" />
+                                          <ImageView fx:id="image" fitHeight="123.0" fitWidth="164.0" layoutX="479.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+             <Tab fx:id="logOutTab" text="Logout">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #e0e0d1;">
+                     <children>
+                        <Text fill="#e4187a" layoutX="113.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="YOU CAN LOGOUT BY CLICKING">
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </Text>
+                         <Button fx:id="b" layoutX="290.0" layoutY="211.0" mnemonicParsing="false" onAction="#logoutbut" prefHeight="42.0" prefWidth="77.0" style="-fx-background-radius: 15;" text="HERE" textFill="#e4187a">
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
